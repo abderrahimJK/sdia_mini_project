@@ -1,0 +1,44 @@
+.root{
+    -fx-background-color: empty;
+    -fx-font-family: Poppins;
+}
+
+/*Login window*/
+
+.side-pane {
+    -fx-background-color: linear-gradient(#52AF92,#00A69C);
+    -fx-background-radius: 15 0 0 15;
+    -fx-border-radius: 15 0 0 15;
+}
+
+.login_form{
+    -fx-background-radius: 0 15 15 0;
+    -fx-border-radius: 0 15 15 0;
+    -fx-background-color: #fff;
+}
+
+.text-field {
+    -fx-background-color: #E6E7E9;
+
+}
+
+.sing-in-btn {
+    -fx-background-color: #52AF92;
+    -fx-cursor: hand;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 1.3em;
+}
+
+.sing-in_btn:hover{
+    -fx-background-color: #5fd0ac;
+}
+
+#close-icon{
+    -fx-fill: #5fd0ac;
+    -fx-cursor: hand;
+}
+
+
+/***********************/
+
+
