@@ -2,17 +2,11 @@ package ma.enset.sdia_mini_project;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import ma.enset.sdia_mini_project.presentation.views.ViewFactory;
+import ma.enset.sdia_mini_project.presentation.models.Model;
 
 public class App extends Application {
-    public static void main(String[] args) {
-       launch(args);
-    }
-
     @Override
-    public void start(Stage stage) throws Exception {
-        ViewFactory viewFactory = new ViewFactory();
-
-        viewFactory.showLogin();
+    public void start(Stage stage) {
+        Model.getInstance().getViewFactory().showLogin();
     }
 }

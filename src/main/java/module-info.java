@@ -12,4 +12,7 @@ module ma.enset.sdia_mini_project {
     opens ma.enset.sdia_mini_project to javafx.fxml;
     exports ma.enset.sdia_mini_project;
     exports ma.enset.sdia_mini_project.presentation.controllers to javafx.fxml;
+//    exports ma.enset.sdia_mini_project.presentation.models to javafx.fxml;
+//    exports ma.enset.sdia_mini_project.presentation.views to javafx.fxml;
+
 }

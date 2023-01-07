@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="750.0" prefWidth="805.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hi, Me" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="27.0" />
+      <Label layoutX="769.0" layoutY="14.0" text="Label" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="27.0" />
+      <HBox layoutX="8.0" layoutY="57.0" prefHeight="146.0" prefWidth="620.0" spacing="4.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="120.0">
+         <children>
+            <AnchorPane prefHeight="180.0" prefWidth="204.0">
+               <children>
+                  <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USERS" />
+                  <VBox layoutX="148.0" layoutY="96.0" prefHeight="120.0" prefWidth="46.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="14.0" />
+                  <FontAwesomeIconView glyphName="USER" layoutX="156.0" layoutY="32.714284896850586" size="30" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="7.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="180.0" prefWidth="202.0">
+               <children>
+                  <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PROJECTS" />
+                  <VBox layoutX="88.0" layoutY="42.0" prefHeight="120.0" prefWidth="45.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="14.0" />
+                  <FontAwesomeIconView glyphName="" layoutX="160.0" layoutY="27.0" size="30" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="7.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="180.0" layoutY="10.0" prefHeight="180.0" prefWidth="204.0">
+               <children>
+                  <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MATERIAL" />
+                  <VBox prefHeight="120.0" prefWidth="45.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="14.0" />
+                  <FontAwesomeIconView layoutX="155.0" layoutY="27.0" size="30" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="7.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <Text layoutX="25.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Summary" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="75.0" />
+      <Text layoutX="20.0" layoutY="312.94921875" strokeType="OUTSIDE" strokeWidth="0.0" text="Table of Projects" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="300.0" />
+      <TableView layoutX="20.0" layoutY="374.0" prefHeight="371.0" prefWidth="565.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="219.39999999999998" AnchorPane.topAnchor="340.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <VBox layoutX="691.0" layoutY="374.0" prefHeight="405.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="14.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Projet" />
+            <TextField />
+            <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tache" />
+            <TextField layoutX="10.0" layoutY="28.0" />
+            <Text layoutX="10.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Intervenant" />
+            <TextField layoutX="10.0" layoutY="69.0" />
+            <Text layoutX="10.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Intervenant" />
+            <DatePicker prefHeight="26.0" prefWidth="202.0" />
+         </children>
+      </VBox>
+      <Text layoutX="766.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Active Client" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="300.0" />
+   </children>
+</AnchorPane>
