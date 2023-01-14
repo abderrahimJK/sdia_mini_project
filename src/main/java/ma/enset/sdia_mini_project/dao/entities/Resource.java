@@ -5,7 +5,7 @@ import java.sql.Time;
 
 //classe persistante ou entité
 public class Resource implements Serializable {
-    private int id;
+    private long id;
     private String name;
     private boolean availability;
     private float cost;
@@ -14,18 +14,18 @@ public class Resource implements Serializable {
     }
 
 
-    public Resource(int id, String name, boolean availability, float cost) {
+    public Resource(long id, String name, boolean availability, float cost) {
         this.id = id;
         this.name = name;
         this.availability = availability;
         this.cost = cost;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -52,4 +52,5 @@ public class Resource implements Serializable {
     public void setCost(float cost) {
         this.cost = cost;
     }
+
 }
