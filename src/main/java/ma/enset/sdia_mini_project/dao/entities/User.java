@@ -8,19 +8,38 @@ public class User implements Serializable {
     private String f_Name;
     private String l_Name;
     private String password;
-    private String role;
     private String email;
+
+    private String phone;
+    private String role;
 
     public User() {
     }
 
-    public User(long id, String f_Name, String l_Name, String password, String role,String email) {
+    public User(String f_Name, String l_Name, String password, String email,String phone, String role) {
+        this.f_Name = f_Name;
+        this.l_Name = l_Name;
+        this.password = password;
+        this.role = role;
+        this.email = email;
+        this.phone = phone;
+    }
+
+    public User(long id, String f_Name, String l_Name, String password, String role, String email) {
         this.id = id;
         this.f_Name = f_Name;
         this.l_Name = l_Name;
         this.password = password;
         this.role = role;
         this.email=email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public long getId() {

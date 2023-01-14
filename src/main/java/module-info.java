@@ -9,6 +9,7 @@ module ma.enset.sdia_mini_project {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires de.jensd.fx.glyphs.fontawesome;
+    requires mysql.connector.java;
 
     opens ma.enset.sdia_mini_project to javafx.fxml;
     exports ma.enset.sdia_mini_project;

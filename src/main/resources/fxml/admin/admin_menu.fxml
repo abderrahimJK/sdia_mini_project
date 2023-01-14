@@ -21,8 +21,9 @@
                 <FontAwesomeIconView glyphName="HOME" size="20" />
             </graphic>
         </Button>
-        <Button fx:id="user_manager_btn" mnemonicParsing="false" text="User Manager" />
-        <Button mnemonicParsing="false" text="Button" />
+        <Button fx:id="user_manager_btn" mnemonicParsing="false" text="Uses" />
+        <Button fx:id="project_manager_btn" mnemonicParsing="false" text="Projects" />
+      <Button fx:id="task_manager_btn" layoutX="43.0" layoutY="130.0" mnemonicParsing="false" text="Tasks" />
     </VBox>
     <VBox alignment="CENTER" prefHeight="120.0" prefWidth="180.0" spacing="20.0" styleClass="alt_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
         <Button fx:id="profile_btn" mnemonicParsing="false" styleClass="alt_menu_btn" stylesheets="@../../styles/adminMenu.css" text="Profile">
