@@ -4,7 +4,7 @@ import ma.enset.sdia_mini_project.dao.entities.User;
 
 import java.util.List;
 
-public interface UseraService {
+public interface UserService {
 
     List<User> getALl();
     User findById(int id);
