@@ -37,7 +37,7 @@ public class LoginController implements Initializable {
 
     private void onLogin(){
 //        close();
-//        Model.getInstance().getViewFactory().showAdminWindow();
+//        Model.getInstance().getViewFactory().showAdminWindow();]
         try {
             String email = email_txt.getText();
             String password = password_txt.getText();
@@ -52,10 +52,6 @@ public class LoginController implements Initializable {
         }catch(Exception e) {
             alertErr();
         }
-
-
-
-
     }
 
     private void close(){

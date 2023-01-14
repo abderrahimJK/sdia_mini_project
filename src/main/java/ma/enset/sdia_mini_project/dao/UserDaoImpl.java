@@ -39,7 +39,21 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User save(User o) {
+    public User save(User u) {
+        try{
+            Connection connection = SingletonConnexionDB.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO USER(F_NAME, L_NAME, EMAIL,PASSWORD, PHONE_NUMBER, ROLE) VALUES (?,?,?,?,?,?)");
+            preparedStatement.setString(1,u.getF_Name());
+            preparedStatement.setString(2,u.getL_Name());
+            preparedStatement.setString(3,u.getEmail());
+            preparedStatement.setString(4,u.getPassword());
+            preparedStatement.setString(5,u.getPhone());
+            preparedStatement.setString(6,u.getRole());
+            preparedStatement.executeUpdate();
+            return u;
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         return null;
     }
 
