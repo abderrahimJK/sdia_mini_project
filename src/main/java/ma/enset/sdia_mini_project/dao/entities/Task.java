@@ -79,7 +79,7 @@ public class Task implements Serializable {
         return id_Project;
     }
 
-    public void setId_Project(int id_Project) {
+    public void setId_Project(Long id_Project) {
         this.id_Project = id_Project;
     }
 
