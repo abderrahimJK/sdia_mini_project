@@ -1,0 +1,175 @@
+.dashboard {
+    -fx-background-color: #EEE;
+}
+
+.user-name {
+    -fx-font-size: 2.6em;
+    -fx-font-family: "Poppins Medium";
+}
+
+.date_lbl{
+    -fx-text-fill: #AAA;
+    -fx-font-size: 1.1em;
+    -fx-font-family: "Calibri Light";
+}
+
+/*Admin View*/
+.projects_view{
+    -fx-background-color: #fff;
+    -fx-border-radius: 10 0 0 10;
+    -fx-padding: 10 0 10 0;
+    -fx-alignment: center;
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: #DDD;
+    -fx-spacing: 10;
+}
+
+.projects {
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, #DDD, 5,0,0,6);
+}
+
+.projects VBox{
+    -fx-background-color: #FFF;
+}
+
+.projects Text{
+    -fx-fill: #fff;
+    -fx-font-family: "Poppins Medium";
+    -fx-font-size: 1.5em;
+}
+
+.projects FontAwesomeIconView {
+    -fx-fill: #FFF;
+}
+
+.project_gradient{
+    -fx-background-color: linear-gradient(to right, #52AF92,#00A69C);
+}
+
+.project_statistics {
+    -fx-text-fill: #fff;
+    -fx-font-family: "Poppins Medium";
+    -fx-font-size: 3em;
+    -fx-font-weight: bold;
+}
+
+.summary-view{
+    -fx-background-color: #FFF;
+    -fx-padding: 5 10 5 10;
+    -fx-spacing: 4;
+    -fx-alignment: center_left;
+}
+
+.acc_summary_container{
+    -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-alignment: center;
+    -fx-border-radius: 10;
+    -fx-border-color: #999;
+    -fx-border-width: 1;
+    -fx-border-style: dashed;
+}
+
+.summary-view Text{
+    -fx-fill: #AAA;
+    -fx-font-family: "Calibri Light";
+    -fx-font-size: 1.2em;
+}
+
+/*new task section */
+
+.new_task_container {
+    -fx-background-color: #EEE;
+    -fx-padding: 20 10 20 10;
+    -fx-spacing: 10;
+    -fx-alignment: center;
+}
+
+.new_task_container Label {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 1.3em;
+}
+
+.new_task_container TextField , DatePicker{
+    -fx-pref-height: 40;
+    -fx-background-color: #fff;
+    -fx-effect: dropshadow(three-pass-box, #AAA, 3, 0, 0, 3);
+}
+
+.new_task_container DatePicker{
+    -fx-pref-width: 240;
+}
+
+.new_task_container Button {
+    -fx-background-color: linear-gradient(to right, #00A69C, #5fd0ac);
+    -fx-pref-width: 240;
+    -fx-font-size: 1.5em;
+    -fx-font-family: Poppins;
+    -fx-text-fill: #FFF;
+    -fx-cursor: hand;
+}
+
+.new_task_container Line{
+    -fx-stroke: #AAA;
+}
+
+/*intervention table section */
+
+.intervention_listView {
+    -fx-background-color: #EEE;
+    -fx-border-width: 0 0 0 0;
+    -fx-border-color: #AAA;
+}
+
+.intervention_listView .scroll-bar:vertical{
+    -fx-scale-x: 0;
+}
+
+.create_client_container {
+    -fx-background-color: #EEE;
+}
+
+.create_client_container Text {
+    -fx-font-size: 1.2em;
+    -fx-fill: #888888;
+}
+
+.create_client_container VBox{
+    -fx-border-width: 0 0 0 1;
+    -fx-border-color: #000;
+    -fx-padding: 10;
+    -fx-spacing: 15;
+}
+
+.create_client_container TextField {
+    -fx-pref-width: 250;
+    -fx-pref-height: 35;
+    -fx-background-color: #FFF;
+    -fx-font-size: 1.3em;
+    -fx-effect: dropshadow(three-pass-box, #AAA, 3, 0,0,3);
+}
+
+.pwd_lbl {
+    -fx-pref-width: 250;
+    -fx-pref-height: 30;
+    -fx-padding: 5;
+    -fx-background-color: #888;
+    -fx-background-radius: 5;
+    -fx-text-fill: #FFF;
+    -fx-font-size: 1.3em;
+    -fx-effect: dropshadow(three-pass-box, #AAA, 3, 0, 0 ,3);
+}
+
+.create_client_container Button {
+    -fx-background-color: linear-gradient(to right, #00A69C, #5fd0ac);
+    -fx-effect: dropshadow(three-pass-box, #AAA, 3, 0,0, 3);
+    -fx-pref-width: 250;
+    -fx-font-size: 1.5em;
+    -fx-font-family: Poppins;
+    -fx-text-fill: #FFF;
+    -fx-cursor: hand;
+}
+
+
+
