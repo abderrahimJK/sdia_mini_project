@@ -29,6 +29,12 @@ public class LoginController implements Initializable {
     private void onLogin(){
         Stage stage = (Stage) login_btn.getScene().getWindow();
         Model.getInstance().getViewFactory().closeStage(stage);
-        Model.getInstance().getViewFactory().showAdminWindow();
+
+//        User user = userService.find(email,password);
+//        if(user.getRole.equals("admin")){
+            Model.getInstance().getViewFactory().showUserWindow();
+//        }else{
+            Model.getInstance().getViewFactory().showUserWindow();
+//        }
     }
 }

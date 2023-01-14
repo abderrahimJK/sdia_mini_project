@@ -1,29 +1,49 @@
 package ma.enset.sdia_mini_project.presentation.views;
 
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import ma.enset.sdia_mini_project.presentation.controllers.AdminController;
+import ma.enset.sdia_mini_project.presentation.controllers.client.UserController;
 
 public class ViewFactory {
-    private final StringProperty adminSelectedMenuItem;
+    private final ObjectProperty<AdminMenuOptions> adminSelectedMenuItem;
     private AnchorPane dashboardView;
     private AnchorPane userManagerView;
+    private AnchorPane profileView;
+    //--------------------------------------
+
+    private AnchorPane userDashboard;
+    private final ObjectProperty<UserMenuOptions> userSelectedMenuItem;
 
     public ViewFactory(){
-        this.adminSelectedMenuItem = new SimpleStringProperty("");
+        this.adminSelectedMenuItem = new SimpleObjectProperty<>();
+        this.userSelectedMenuItem = new SimpleObjectProperty<>();
     }
 
-    public StringProperty getAdminSelectedMenuItem() {
+
+    /*
+     * Admin Views section
+     * */
+
+    public ObjectProperty<AdminMenuOptions> getAdminSelectedMenuItem() {
         return adminSelectedMenuItem;
     }
 
+    public AnchorPane getProfileView() {
+        if (profileView == null){
+            try{
+                profileView = new FXMLLoader(getClass().getResource("/fxml/profile.fxml")).load();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return profileView;
+    }
 
     public AnchorPane getDashboardView(){
         if (dashboardView == null){
@@ -34,11 +54,6 @@ public class ViewFactory {
             }
         }
         return dashboardView;
-    }
-
-    public void showLogin() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
-        createScene(fxmlLoader);
     }
 
     public void showAdminWindow(){
@@ -59,6 +74,38 @@ public class ViewFactory {
         return userManagerView;
     }
 
+    /*
+    * User Views section
+    * */
+
+    public ObjectProperty<UserMenuOptions> getUserSelectedMenuItem() {
+        return userSelectedMenuItem;
+    }
+    public AnchorPane getUserDashboard() {
+        if (userDashboard == null){
+            try{
+                userDashboard = new FXMLLoader(getClass().getResource("/fxml/user/userDashboard.fxml")).load();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return userDashboard;
+    }
+    public void showUserWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/user.fxml"));
+        UserController userController = new UserController();
+        loader.setController(userController);
+        createScene(loader);
+    }
+
+
+    /*******************************************************************************/
+
+    public void showLogin() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
+        createScene(fxmlLoader);
+    }
+
     private void createScene(FXMLLoader loader){
             Scene scene= null;
             try{
@@ -71,7 +118,7 @@ public class ViewFactory {
 //            stage.initStyle(StageStyle.UNDECORATED);
 //            stage.initStyle(StageStyle.TRANSPARENT);
             stage.setScene(scene);
-            stage.setResizable(false);
+//            stage.setResizable(false);
             stage.show();
     }
 

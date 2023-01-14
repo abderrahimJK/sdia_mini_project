@@ -7,6 +7,9 @@ import ma.enset.sdia_mini_project.presentation.models.Model;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static ma.enset.sdia_mini_project.presentation.views.AdminMenuOptions.*;
+
+
 public class AdminController implements Initializable {
 
 
@@ -15,10 +18,13 @@ public class AdminController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().addListener((observableValue, oldVal, newVal) ->{
-            if ("userMangerView".equals(newVal)) {
-                admin_parent.setCenter(Model.getInstance().getViewFactory().getUserManagerView());
-            }else{
-                admin_parent.setCenter(Model.getInstance().getViewFactory().getDashboardView());
+
+            switch(newVal){
+                case USERMANAGERVIEW:admin_parent.setCenter(Model.getInstance().getViewFactory().getUserManagerView());
+                    break;
+                case PROFILE: admin_parent.setCenter(Model.getInstance().getViewFactory().getProfileView());
+                    break;
+                default: admin_parent.setCenter(Model.getInstance().getViewFactory().getDashboardView());
             }
         });
     }

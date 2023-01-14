@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="750.0" prefWidth="180.0" styleClass="main_menu_container" stylesheets="@../../styles/adminMenu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.enset.sdia_mini_project.presentation.controllers.menuController">
-    <VBox alignment="TOP_CENTER" prefHeight="94.0" prefWidth="180.0" spacing="10.0" styleClass="title_container" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <opaqueInsets>
-            <Insets />
-        </opaqueInsets>
+<AnchorPane prefHeight="750.0" prefWidth="180.0" stylesheets="@../../styles/adminMenu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.enset.sdia_mini_project.presentation.controllers.client.clientMenuController">
+    <VBox alignment="TOP_CENTER" prefHeight="94.0" prefWidth="180.0" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
         <FontAwesomeIconView glyphName="HOME" size="40" />
         <Label text="User Name" />
     </VBox>
     <VBox alignment="TOP_CENTER" layoutY="94.0" prefHeight="606.0" prefWidth="180.0" spacing="20.0" styleClass="menu_container" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="94.0">
-        <Button fx:id="dashboard_btn" mnemonicParsing="false" text="DashBoard">
+        <Button fx:id="userdashboard_btn" mnemonicParsing="false" text="DashBoard">
             <graphic>
                 <FontAwesomeIconView glyphName="HOME" size="20" />
             </graphic>
         </Button>
-        <Button fx:id="user_manager_btn" mnemonicParsing="false" text="User Manager" />
+        <Button mnemonicParsing="false" text="User Manager" />
         <Button mnemonicParsing="false" text="Button" />
     </VBox>
     <VBox alignment="CENTER" prefHeight="120.0" prefWidth="180.0" spacing="20.0" styleClass="alt_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
-        <Button fx:id="profile_btn" mnemonicParsing="false" styleClass="alt_menu_btn" stylesheets="@../../styles/adminMenu.css" text="Profile">
+        <Button fx:id="userprofile_btn" mnemonicParsing="false" styleClass="alt_menu_btn" stylesheets="@../../styles/adminMenu.css" text="Profile">
             <graphic>
                 <FontAwesomeIconView glyphName="USER" size="20" />
             </graphic>
