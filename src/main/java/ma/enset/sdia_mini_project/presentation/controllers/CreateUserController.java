@@ -1,7 +1,10 @@
 package ma.enset.sdia_mini_project.presentation.controllers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import ma.enset.sdia_mini_project.dao.UserDaoImpl;
@@ -26,7 +29,17 @@ public class CreateUserController implements Initializable {
     public RadioButton admin_radio;
     public ToggleGroup role;
     public Button create_user_btn;
+    public CheckBox notify_user_checkBox;
+    public TableColumn<User,Long> user_id_cell;
+    public TableColumn<User,String> fname_cell;
+    public TableColumn<User,String> lname_cell;
+    public TableColumn<User,String> email_cell;
+    public TableColumn<User,String> phone_cell;
+    public TableColumn<User,String> role_cell;
+    public TableColumn<User,String> function_cell;
+    public TableView user_tableView;
     UserService userService;
+    ObservableList<User> userObservableList;
 
     public CreateUserController() {
         this.userService = new UserServiceImpl(new UserDaoImpl());
@@ -36,6 +49,7 @@ public class CreateUserController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         pwd_lbl.setText(generatePwd());
         create_user_btn.setOnAction(actionEvent -> onAddUser());
+        loadUserData();
     }
 
     private void onAddUser(){
@@ -50,7 +64,7 @@ public class CreateUserController implements Initializable {
             f_name = first_name_txt.getText();
             l_name = last_name_txt.getText();
             email = email_txt.getText();
-            password = pwd_lbl.getText();
+            password = PasswordUtils.hashPassword(pwd_lbl.getText());
             phone = phone_txt.getText();
 
             if(admin_radio.isSelected()){
@@ -63,6 +77,7 @@ public class CreateUserController implements Initializable {
             }else{
                 User u = new User(f_name,l_name, password, email, phone, role);
                 userService.add(u);
+                loadUserData();
                 message_lbl.setStyle("-fx-text-fill: green;");
                 message_lbl.setText("user added successfully");
             }
@@ -72,6 +87,20 @@ public class CreateUserController implements Initializable {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    private void loadUserData(){
+         this.userObservableList = FXCollections.observableArrayList(
+                userService.getALl()
+        );
+        user_id_cell.setCellValueFactory(new PropertyValueFactory<User, Long>("id"));
+        fname_cell.setCellValueFactory(new PropertyValueFactory<User, String>("F_Name"));
+        lname_cell.setCellValueFactory(new PropertyValueFactory<User, String>("L_Name"));
+        email_cell.setCellValueFactory(new PropertyValueFactory<User, String>("Email"));
+        phone_cell.setCellValueFactory(new PropertyValueFactory<User, String>("Phone"));
+        role_cell.setCellValueFactory(new PropertyValueFactory<User, String>("role"));
+//        user_id_cell.setCellValueFactory(new PropertyValueFactory<User, Long>("FUNCTION"));
+        user_tableView.setItems(this.userObservableList);
     }
 
     private String generatePwd(){
@@ -89,7 +118,6 @@ public class CreateUserController implements Initializable {
             sb.append(rndChar);
         }
         return sb.toString();
-
     }
 
 }

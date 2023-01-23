@@ -3,6 +3,7 @@ package ma.enset.sdia_mini_project.presentation.controllers.client;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import ma.enset.sdia_mini_project.presentation.models.Model;
+import ma.enset.sdia_mini_project.presentation.views.AdminMenuOptions;
 import ma.enset.sdia_mini_project.presentation.views.UserMenuOptions;
 
 import java.net.URL;
@@ -25,6 +26,7 @@ public class clientMenuController implements Initializable {
     private void addListeners(){
         userdashboard_btn.setOnAction(actionEvent -> onDashboard());
         userprofile_btn.setOnAction(actionEvent -> onProfile());
+        logout_btn.setOnAction(actionEvent -> logout());
     }
 
     private void onDashboard(){
@@ -32,5 +34,9 @@ public class clientMenuController implements Initializable {
     }
     private void onProfile(){
         Model.getInstance().getViewFactory().getUserSelectedMenuItem().set(UserMenuOptions.PROFILE);
+    }
+
+    private void logout(){
+        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.LOGOUT);
     }
 }

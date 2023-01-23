@@ -126,8 +126,16 @@
     -fx-scale-x: 0;
 }
 
-.create_client_container {
+
+/*
+*
+*create user view
+*/
+.create_user_view{
     -fx-background-color: #EEE;
+}
+.create_client_container {
+    -fx-pref-width: 350;
 }
 
 .create_client_container Text {
@@ -135,7 +143,7 @@
     -fx-fill: #888888;
 }
 
-.create_client_container VBox{
+.create_client_container{
     -fx-border-width: 0 0 0 1;
     -fx-border-color: #000;
     -fx-padding: 10;
@@ -143,7 +151,6 @@
 }
 
 .create_client_container TextField {
-    -fx-pref-width: 250;
     -fx-pref-height: 35;
     -fx-background-color: #FFF;
     -fx-font-size: 1.3em;
@@ -170,6 +177,6 @@
     -fx-text-fill: #FFF;
     -fx-cursor: hand;
 }
-
+/***************/
 
 

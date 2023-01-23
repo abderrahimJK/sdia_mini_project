@@ -25,6 +25,7 @@ public class menuController implements Initializable {
         dashboard_btn.setOnAction(actionEvent -> onDashboard());
         user_manager_btn.setOnAction(actionEvent -> onUserManager());
         profile_btn.setOnAction(actionEvent -> onProfile());
+        logout_btn.setOnAction(actionEvent -> logout());
     }
 
     private void onDashboard(){
@@ -37,5 +38,9 @@ public class menuController implements Initializable {
 
     private void onProfile(){
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.PROFILE);
+    }
+
+    private void logout(){
+        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.LOGOUT);
     }
 }

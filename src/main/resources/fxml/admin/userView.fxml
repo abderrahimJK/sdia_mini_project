@@ -4,6 +4,8 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,9 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane accessibleText="Generated password" prefHeight="750.0" prefWidth="805.0" styleClass="create_client_container" stylesheets="@../../styles/dashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.enset.sdia_mini_project.presentation.controllers.CreateUserController">
+<AnchorPane accessibleText="Generated password" prefHeight="750.0" prefWidth="805.0" styleClass="create_user_view" stylesheets="@../../styles/dashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.enset.sdia_mini_project.presentation.controllers.CreateUserController">
    <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Manager" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
-   <VBox layoutX="14.0" layoutY="46.0" prefHeight="700.0" prefWidth="600.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="40.0">
+   <VBox layoutX="14.0" layoutY="46.0" prefHeight="700.0" prefWidth="600.0" styleClass="create_client_container" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="40.0">
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
       <TextField fx:id="first_name_txt" />
       <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
@@ -25,7 +27,7 @@
       <Text layoutX="10.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adress" />
       <TextField fx:id="address_txt" layoutX="10.0" layoutY="157.0" />
       <Text layoutX="21.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role" />
-      <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+      <HBox prefHeight="26.0" prefWidth="578.0" spacing="25.0">
          <children>
             <RadioButton fx:id="user_radio" mnemonicParsing="false" selected="true" text="User">
                <toggleGroup>
@@ -35,10 +37,23 @@
             <RadioButton fx:id="admin_radio" mnemonicParsing="false" text="Admin" toggleGroup="$role" />
          </children>
       </HBox>
-      <CheckBox layoutX="21.0" layoutY="529.0" mnemonicParsing="false" text="Generate Password" />
-      <Label fx:id="pwd_lbl" styleClass="pwd_lbl" text="GiE%@!123REeOP" />
-      <CheckBox mnemonicParsing="false" text="Notify by mail" />
+      <Label fx:id="pwd_lbl" styleClass="pwd_lbl" />
+      <CheckBox fx:id="notify_user_checkBox" mnemonicParsing="false" text="Notify by mail" />
       <Button fx:id="create_user_btn" mnemonicParsing="false" text="Create New User" />
-      <Text fx:id="error_lbl" layoutX="10.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error" />
+      <Text fx:id="message_lbl" layoutX="10.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" />
    </VBox>
+   <TableView fx:id="user_tableView" layoutX="382.0" layoutY="40.0" prefHeight="682.0" prefWidth="415.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="375.8" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="40.0">
+     <columns>
+       <TableColumn fx:id="user_id_cell" prefWidth="75.0" text="ID" />
+       <TableColumn fx:id="fname_cell" prefWidth="75.0" text="First Name" />
+         <TableColumn fx:id="lname_cell" prefWidth="75.0" text="Last Name" />
+         <TableColumn fx:id="email_cell" prefWidth="75.0" text="Email" />
+         <TableColumn fx:id="phone_cell" prefWidth="75.0" text="Phone" />
+         <TableColumn fx:id="role_cell" prefWidth="75.0" text="Role" />
+         <TableColumn fx:id="function_cell" prefWidth="75.0" text="Function" />
+     </columns>
+      <columnResizePolicy>
+         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+      </columnResizePolicy>
+   </TableView>
 </AnchorPane>
