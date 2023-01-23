@@ -10,7 +10,7 @@ public class SingletonConnexionDB {
     static {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection  = DriverManager.getConnection("jdbc:mysql://localhost:3306/gestion_projets", "root", "");
+            connection  = DriverManager.getConnection("jdbc:mysql://localhost:3308/gestion_projets", "root", "adroot");
         }catch(Exception e){
             e.printStackTrace();
         }
