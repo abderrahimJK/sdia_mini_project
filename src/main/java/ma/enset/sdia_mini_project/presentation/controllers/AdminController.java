@@ -2,6 +2,7 @@ package ma.enset.sdia_mini_project.presentation.controllers;
 
 import javafx.fxml.Initializable;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import ma.enset.sdia_mini_project.presentation.models.Model;
 
 import java.net.URL;
@@ -24,6 +25,10 @@ public class AdminController implements Initializable {
                     break;
                 case PROFILE: admin_parent.setCenter(Model.getInstance().getViewFactory().getProfileView());
                     break;
+                case LOGOUT: {
+                    Model.getInstance().getViewFactory().closeStage((Stage) admin_parent.getScene().getWindow());
+                    Model.getInstance().getViewFactory().showLogin();
+                } break;
                 default: admin_parent.setCenter(Model.getInstance().getViewFactory().getDashboardView());
             }
         });
