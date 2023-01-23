@@ -15,11 +15,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> getALl() {
-        return null;
+        return userDao.findAll();
     }
 
     @Override
-    public User findById(int id) {
+    public User findById(long id) {
         return userDao.findByID(id);
     }
 
@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User update(User a) {
-        return null;
+        return userDao.update(a);
     }
 
     @Override
