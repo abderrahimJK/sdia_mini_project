@@ -3,10 +3,7 @@ package ma.enset.sdia_mini_project.presentation.controllers;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import ma.enset.sdia_mini_project.dao.UserDaoImpl;
 import ma.enset.sdia_mini_project.dao.entities.User;
@@ -20,10 +17,11 @@ import java.util.ResourceBundle;
 public class LoginController implements Initializable {
 
     public TextField email_txt;
-    public TextField password_txt;
+
     public FontAwesomeIconView close_btn;
     public Label error_lbl;
     public Button login_btn;
+    public PasswordField password_txt;
     private UserService userService;
 
     public LoginController() {
@@ -37,7 +35,7 @@ public class LoginController implements Initializable {
 
     private void onLogin(){
 //        close();
-//        Model.getInstance().getViewFactory().showAdminWindow();]
+//        Model.getInstance().getViewFactory().showAdminWindow();
         try {
             String email = email_txt.getText();
             String password = password_txt.getText();
@@ -49,6 +47,10 @@ public class LoginController implements Initializable {
                 close();
                 Model.getInstance().getViewFactory().showUserWindow();
             }
+            LoginSession.id = user.getId();
+            LoginSession.f_Name = user.getF_Name();
+            LoginSession.l_Name = user.getL_Name();
+            LoginSession.UsetrType = user.getRole();
         }catch(Exception e) {
             alertErr();
         }
